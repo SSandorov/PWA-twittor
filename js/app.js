@@ -1,6 +1,17 @@
+// Debido a que el PATH es distinto entre el localhost y el github pages,
+// hacemos una distinción
+const url = window.location.href;
+const swLocation = '/twittor/sw.js';
+
 // Añadimos el enlace al sw
 if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/sw.js');
+
+    // Condicional para saber con que dominio estamos trabajando
+    if(url.includes('localhost')) {
+        swLocation = '/sw.js';
+    } 
+
+    navigator.serviceWorker.register(swLocation);
 }
 
 // Referencias de jQuery
