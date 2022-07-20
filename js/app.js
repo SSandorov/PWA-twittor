@@ -1,7 +1,7 @@
 // Debido a que el PATH es distinto entre el localhost y el github pages,
 // hacemos una distinción
 const url = window.location.href;
-const swLocation = '/twittor/sw.js';
+const swLocation = '/PWA-twittor/sw.js';
 
 // Añadimos el enlace al sw
 if (navigator.serviceWorker) {
